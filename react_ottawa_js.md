@@ -1,0 +1,33 @@
+React prez
+----------
+
+- demo
+	- story about how the idea came about
+		- not an expert, but wanted to share my thoughts after building something with React
+	- show app on two devices (cross platform)
+		- update app on one
+		- have update appear on 2nd
+- "on the shoulders of giants"
+	- React
+	- Firebase
+	- React Router
+	- React Intl
+	- Cordova
+	- Ionic Framework CSS
+- we'll focus on React
+- why react?
+	- Fast
+		- performance (virtual DOM)
+		- to learn
+	- Component based
+		- "with React the only thing you do is build components"
+		- "..present data that changes over time"
+	- Simple
+		- "express how your app should look at any given point in time"
+	- No templates
+		- means no abstractions. uses a real programming language to render views
+		- markup unified with its corresponding view logic
+- Components
+	- a component should only do one thing
+	- docs have a guide on breaking up your user interface [into a component heirarchy](https://facebook.github.io/react/docs/thinking-in-react.html)
+

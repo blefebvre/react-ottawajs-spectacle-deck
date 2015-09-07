@@ -10,44 +10,102 @@ import preloader from "../src/utils/preloader";
 import Interactive from "./interactive";
 
 const images = {
-  city: require("./city.jpg"),
-  kat: require("./kat.png"),
-  logo: require("./formidable-logo.svg")
+  dashboard: require("./images/poop_monitor_dashboard.png"),
+  dashboardComponents: require("./images/poop_monitor_dashboard_components.png"),
+  diaper: require("./images/poop_monitor_diaper.png"),
+  diaperComponents: require("./images/poop_monitor_diaper_components.png")
 };
 
-preloader([images.city, images.kat]);
+preloader([
+            images.dashboard, 
+            images.dashboardComponents, 
+            images.diaper, 
+            images.diaperComponents
+          ]);
 
 export default class extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={800}>
-        <Slide transition={["zoom"]} bgColor="primary">
+        <Slide transition={["slide"]} bgColor="primary">
           <Heading size={1} fit caps textColor="black">
-            Spectacle
+            React
           </Heading>
           <Heading size={1} fit caps margin="-20px 0px">
-            A ReactJS Presentation Library
+            A Presentation for OttawaJS
           </Heading>
-          <Heading size={2} fit caps textColor="black">
-            Where You Can Write Your Decks In JSX
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="black" notes="">
+          <Heading size={2} textColor="tertiary">
+            Hello
           </Heading>
-          <Link href="https://github.com/FormidableLabs/spectacle">
-            <Text bold caps textColor="tertiary">View on Github</Text>
+          <Link href="https://twitter.com/brucelefebvre">
+            <Text textColor="tertiary">@brucelefebvre</Text>
           </Link>
-          <Text textSize="1.5em" margin="20px 0px 0px" bold>Hit Your Right Arrow To Begin!</Text>
         </Slide>
-        <Slide transition={['slide']} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-          <Image src={images.kat.replace('/','')} margin="0px auto 40px" height="293px"/>
-          <Heading size={1} fit textColor="primary" textFont="secondary">
-            Wait what?
+
+        <Slide transition={["slide"]} bgColor="primary" notes="">
+          <Heading size={2} textColor="tertiary">
+            Demo!
           </Heading>
         </Slide>
-        <Slide transition={['zoom', 'fade']} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-          <CodePane
-            lang="javascript"
-            source={require("raw!./deck.example")}
-            margin="20px auto"/>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={5} textColor="tertiary">
+            Dashboard Components
+          </Heading>
+          <Layout>
+            <Fill>
+              <Image src={images.dashboard.replace('/','')} />
+            </Fill>
+            <Fill>
+              
+            </Fill>
+          </Layout>
         </Slide>
+
+
+        <Slide transition={["none"]} bgColor="primary">
+          <Heading size={5} textColor="tertiary">
+            Dashboard Components
+          </Heading>
+          <Layout>
+            <Fill>
+              <Image src={images.dashboardComponents.replace('/','')} />
+            </Fill>
+            <Fill>
+              
+            </Fill>
+          </Layout>
+        </Slide>
+
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Layout>
+            <Fill>
+              <Image src={images.diaper.replace('/','')} />
+            </Fill>
+            <Fill>
+              
+            </Fill>
+          </Layout>
+        </Slide>
+
+
+        <Slide transition={["none"]} bgColor="primary">
+          <Layout>
+            <Fill>
+              <Image src={images.diaperComponents.replace('/','')} />
+            </Fill>
+            <Fill>
+              
+            </Fill>
+          </Layout>
+        </Slide>
+
+
+        {/*
         <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
           <Appear fid="1">
             <Heading size={1} caps fit textColor="primary">
@@ -116,6 +174,7 @@ export default class extends React.Component {
           </Heading>
           <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
         </Slide>
+      */}
       </Deck>
     );
   }
