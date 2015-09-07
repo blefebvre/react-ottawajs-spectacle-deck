@@ -23,6 +23,12 @@ preloader([
             images.diaperComponents
           ]);
 
+const justifyCenter = {
+  "-webkit-align-items": "center",
+  "-webkit-box-align": "center",
+  "align-items": "center"
+};
+
 export default class extends React.Component {
   render() {
     return (
@@ -75,7 +81,16 @@ export default class extends React.Component {
               <Image src={images.dashboardComponents.replace('/','')} />
             </Fill>
             <Fill>
-              
+              <List>
+                <ListItem textColor="red">Dashboard</ListItem>
+                <ListItem textColor="green"><Appear fid="2">Header</Appear></ListItem>
+                <ListItem textColor="blue"><Appear fid="3">EventSelector</Appear></ListItem>
+                <ListItem textColor="yellow"><Appear fid="4">EventTypeLink</Appear></ListItem>
+                <ListItem textColor="pink"><Appear fid="5">EventHistory</Appear></ListItem>
+                <ListItem textColor="orange"><Appear fid="6">Event</Appear></ListItem>
+                <ListItem textColor="brown"><Appear fid="6">DiaperEvent</Appear></ListItem>
+                <ListItem textColor="gray"><Appear fid="6">FormattedRelative</Appear></ListItem>
+              </List>
             </Fill>
           </Layout>
         </Slide>
@@ -87,21 +102,32 @@ export default class extends React.Component {
               <Image src={images.diaper.replace('/','')} />
             </Fill>
             <Fill>
-              
             </Fill>
           </Layout>
         </Slide>
 
 
-        <Slide transition={["none"]} bgColor="primary">
+        <Slide transition={["none"]} bgColor="primary" notes="what makes a good component">
           <Layout>
             <Fill>
               <Image src={images.diaperComponents.replace('/','')} />
             </Fill>
             <Fill>
-              
+              <List>
+                <ListItem textColor="red">AddDiaperEvent</ListItem>
+                <ListItem textColor="green"><Appear fid="1">Header</Appear></ListItem>
+                <ListItem textColor="blue"><Appear fid="2">DiaperEventForm</Appear></ListItem>
+                <ListItem textColor="orange"><Appear fid="3">TimeSelector</Appear></ListItem>
+              </List>
             </Fill>
           </Layout>
+        </Slide> 
+
+        <Slide transition={["slide"]} bgColor="black">
+          <BlockQuote>
+            <Quote>..a component should ideally only do one thing.</Quote>
+            <Cite>Pete Hunt, <a href="https://facebook.github.io/react/docs/thinking-in-react.html">Thinking in React</a></Cite>
+          </BlockQuote>
         </Slide>
 
 
