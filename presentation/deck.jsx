@@ -114,14 +114,6 @@ export default class extends React.Component {
         </Slide>
 
 
-        <Slide transition={["slide"]} bgColor="black">
-          <BlockQuote>
-            <Quote>In fact, with React the only thing you do is build components.</Quote>
-            <Cite><a href="https://facebook.github.io/react/docs/why-react.html">Why React?</a></Cite>
-          </BlockQuote>
-        </Slide>
-
-
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={5} textColor="tertiary">
             Dashboard Components
@@ -190,9 +182,39 @@ export default class extends React.Component {
 
         <Slide transition={["slide"]} bgColor="black">
           <BlockQuote>
-            <Quote>..a component should ideally only do one thing.</Quote>
+            <Quote>...with React the only thing you do is build components.</Quote>
+            <Cite><a href="https://facebook.github.io/react/docs/why-react.html">Why React?</a></Cite>
+          </BlockQuote>
+        </Slide>
+
+{/*
+        <Slide transition={["slide"]} bgColor="black">
+          <BlockQuote>
+            <Quote>...a component should ideally only do one thing.</Quote>
             <Cite>Pete Hunt, <a href="https://facebook.github.io/react/docs/thinking-in-react.html">Thinking in React</a></Cite>
           </BlockQuote>
+        </Slide>
+*/}
+
+        <Slide transition={['zoom', 'fade']} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+          <Heading size={3} textColor="tertiary">
+            Your First Component
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={require("raw!./firstComponent.example")}
+            margin="20px auto"/>
+        </Slide>
+
+
+        <Slide transition={['zoom', 'fade']} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+          <Heading size={3} textColor="tertiary">
+            Use It on a Page
+          </Heading>
+          <CodePane
+            lang="javascript"
+            source={require("raw!./componentUse.example")}
+            margin="20px auto"/>
         </Slide>
 
 
