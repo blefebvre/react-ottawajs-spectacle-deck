@@ -47,6 +47,7 @@ export default class extends React.Component {
           </Heading>
         </Slide>
 
+
         <Slide transition={["slide"]} bgColor="black" notes="you've probably heard about it by now">
           <Heading size={2} textColor="tertiary">
             Hello
@@ -56,6 +57,7 @@ export default class extends React.Component {
           </Link>
         </Slide>
 
+
         <Slide transition={["slide"]}>
             <Heading size={2} caps textColor="black">
               React: 
@@ -64,6 +66,7 @@ export default class extends React.Component {
               <Appear>a JavaScript library for creating user interfaces</Appear>
             </Heading>
         </Slide>
+
 
         <Slide transition={["slide"]}  bgColor="secondary" textColor="primary">
           <Heading size={2} textColor="primary">
@@ -88,10 +91,26 @@ export default class extends React.Component {
           </List>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary" notes="">
+
+        <Slide transition={["slide"]} bgColor="primary" notes="for me to learn, i need to build something">
           <Heading size={2} textColor="tertiary">
             Demo!
           </Heading>
+        </Slide>
+
+
+        <Slide transition={["slide"]}  bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="primary">
+            On the Shoulders of Giants
+          </Heading>
+          <List>
+            <ListItem>React - http://facebook.github.io/react/</ListItem>
+            <ListItem><Appear>React Router - https://rackt.github.io/react-router/</Appear></ListItem>
+            <ListItem><Appear>React Intl - http://formatjs.io/react/</Appear></ListItem>
+            <ListItem><Appear>Ionic Framework CSS - http://ionicframework.com/</Appear></ListItem>
+            <ListItem><Appear>Firebase - https://www.firebase.com/</Appear></ListItem>
+            <ListItem><Appear>PhoneGap - http://phonegap.com/</Appear></ListItem>
+          </List>
         </Slide>
 
 
@@ -102,6 +121,7 @@ export default class extends React.Component {
           </BlockQuote>
         </Slide>
 
+
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={5} textColor="tertiary">
             Dashboard Components
@@ -111,7 +131,6 @@ export default class extends React.Component {
               <Image src={images.dashboard.replace('/','')} />
             </Fill>
             <Fill>
-              
             </Fill>
           </Layout>
         </Slide>
@@ -168,6 +187,7 @@ export default class extends React.Component {
           </Layout>
         </Slide> 
 
+
         <Slide transition={["slide"]} bgColor="black">
           <BlockQuote>
             <Quote>..a component should ideally only do one thing.</Quote>
@@ -175,13 +195,13 @@ export default class extends React.Component {
           </BlockQuote>
         </Slide>
 
+
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={2} textColor="tertiary">
             Speed: at a price
           </Heading>
           {/* code sample of handleSubmit */}
         </Slide>
-
 
 
         <Slide transition={["slide"]} bgColor="primary">
