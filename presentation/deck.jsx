@@ -29,10 +29,15 @@ const justifyCenter = {
   "align-items": "center"
 };
 
+const subListItem = {
+  "font-size": "80%",
+  "margin-left": "1em"
+};
+
 export default class extends React.Component {
   render() {
     return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={800}>
+      <Deck transition={["slide"]} transitionDuration={800}>
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={1} fit caps textColor="black">
             React
@@ -42,7 +47,7 @@ export default class extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="black" notes="">
+        <Slide transition={["slide"]} bgColor="black" notes="you've probably heard about it by now">
           <Heading size={2} textColor="tertiary">
             Hello
           </Heading>
@@ -51,10 +56,50 @@ export default class extends React.Component {
           </Link>
         </Slide>
 
+        <Slide transition={["slide"]}>
+            <Heading size={2} caps textColor="black">
+              React: 
+            </Heading>
+            <Heading size={4} caps fit textColor="black">
+              <Appear>a JavaScript library for creating user interfaces</Appear>
+            </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]}  bgColor="secondary" textColor="primary">
+          <Heading size={2} textColor="primary">
+            Why React?
+          </Heading>
+          <List>
+            <ListItem><Appear>Component based</Appear></ListItem>
+            <ListItem>
+              <Appear>Fast</Appear>
+              <List>
+                <ListItem style={subListItem}><Appear>Performance</Appear></ListItem>
+                <ListItem style={subListItem}><Appear>To learn</Appear></ListItem>
+              </List>
+            </ListItem>
+            <ListItem><Appear>Simple</Appear></ListItem>
+            <ListItem><Appear>No templates</Appear>
+              <List >
+                <ListItem style={subListItem}><Appear>Means no abstractions</Appear></ListItem>
+                <ListItem style={subListItem}><Appear>Markup lives with its corresponding view logic</Appear></ListItem>
+              </List>
+            </ListItem>
+          </List>
+        </Slide>
+
         <Slide transition={["slide"]} bgColor="primary" notes="">
           <Heading size={2} textColor="tertiary">
             Demo!
           </Heading>
+        </Slide>
+
+
+        <Slide transition={["slide"]} bgColor="black">
+          <BlockQuote>
+            <Quote>In fact, with React the only thing you do is build components.</Quote>
+            <Cite><a href="https://facebook.github.io/react/docs/why-react.html">Why React?</a></Cite>
+          </BlockQuote>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -130,7 +175,21 @@ export default class extends React.Component {
           </BlockQuote>
         </Slide>
 
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={2} textColor="tertiary">
+            Speed: at a price
+          </Heading>
+          {/* code sample of handleSubmit */}
+        </Slide>
 
+
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={2} textColor="tertiary">
+            Gotchas
+          </Heading>
+          {/*  */}
+        </Slide>
         {/*
         <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
           <Appear fid="1">
