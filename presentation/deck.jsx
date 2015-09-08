@@ -13,7 +13,8 @@ const images = {
   dashboard: require("./images/poop_monitor_dashboard.png"),
   dashboardComponents: require("./images/poop_monitor_dashboard_components.png"),
   diaper: require("./images/poop_monitor_diaper.png"),
-  diaperComponents: require("./images/poop_monitor_diaper_components.png")
+  diaperComponents: require("./images/poop_monitor_diaper_components.png"),
+  lego: require("./images/lego.png")
 };
 
 preloader([
@@ -196,7 +197,7 @@ export default class extends React.Component {
         </Slide>
 */}
 
-        <Slide transition={['zoom', 'fade']} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+        <Slide transition={['slide']} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
           <Heading size={3} textColor="tertiary">
             Your First Component
           </Heading>
@@ -207,14 +208,34 @@ export default class extends React.Component {
         </Slide>
 
 
-        <Slide transition={['zoom', 'fade']} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+        <Slide transition={['slide']} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
           <Heading size={3} textColor="tertiary">
-            Use It on a Page
+            Use It
           </Heading>
           <CodePane
             lang="javascript"
             source={require("raw!./componentUse.example")}
             margin="20px auto"/>
+        </Slide>
+
+
+        <Slide transition={["slide"]}>
+          <Heading size={3} textColor="tertiary">
+            Component Basics
+          </Heading>
+          <Layout>
+            <Fill style={{flex: 1}}>
+              <Image src={images.lego.replace('/','')} width="100%"/>
+            </Fill>
+            <Fill style={{flex: 2}}>
+              <List>
+                <ListItem>Component output is simply a function of `state` and `props`</ListItem>
+
+                <ListItem><Appear>Lower-case tag name renders HTML</Appear></ListItem>
+                <ListItem><Appear>Upper-case renders React component</Appear></ListItem>
+              </List>
+            </Fill>
+          </Layout>
         </Slide>
 
 

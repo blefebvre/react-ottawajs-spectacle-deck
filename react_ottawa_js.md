@@ -31,3 +31,5 @@ React prez
 	- a component should only do one thing
 	- docs have a guide on breaking up your user interface [into a component heirarchy](https://facebook.github.io/react/docs/thinking-in-react.html)
 
+- Resources:
+	- React JSFiddle - https://jsfiddle.net/reactjs/69z2wepo/
