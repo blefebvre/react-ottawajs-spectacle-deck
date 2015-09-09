@@ -1,0 +1,12 @@
+var GenericEventForm = React.createClass({
+  onDateUpdate: function(date) {
+    // Deal with the updated date
+  },
+  render: function() {
+    return (
+      <form className="eventForm">
+        <TimeSelector onUpdate={this.onDateUpdate}/>
+      </form>
+    )
+  }
+});

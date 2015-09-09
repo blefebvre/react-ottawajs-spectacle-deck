@@ -1,0 +1,12 @@
+var TimeSelector = React.createClass({
+  timeSelectionChanged: function(e) {
+    var eventDate = new Date(); // manipulate date as required
+    this.props.onUpdate(eventDate);
+  },
+  render: function() {
+    // Simplified for code sample
+    return (
+      <input type="radio" name="timeOption" onChange={this.timeSelectionChanged} />
+    );
+  }
+});

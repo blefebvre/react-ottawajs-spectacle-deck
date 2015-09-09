@@ -1,0 +1,35 @@
+var EventHistory = React.createClass({
+  getInitialState: function() {
+    return {events: []};
+  },
+  componentWillMount: function() {
+    var eventItems = [];
+    this.dataProvider = new PMDataProvider();
+    this.dataProvider.getEvents(function(event) {
+      // `unshift` used instead of `push` to place the newest items at the top
+      eventItems.unshift(event);
+      this.setState({
+        events: eventItems
+      });
+    }.bind(this));
+  },
+  componentWillUnmount: function() {
+    this.dataProvider.close();
+  },
+  render: function() {
+    var eventNodes = this.state.events.map(function (event, keyIndex) {
+      var eventComponent;
+      if (event.type === "Diaper") {
+        return (<DiaperEvent event={event} key={keyIndex} />);
+      }
+      else {
+        return (<Event event={event} key={keyIndex} />);
+      }
+    });
+    return (
+      <div className="list card">
+        {eventNodes}
+      </div>
+    );
+  }
+});

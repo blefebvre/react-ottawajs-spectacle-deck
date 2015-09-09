@@ -1,0 +1,18 @@
+var EventHistory = React.createClass({
+  getInitialState: function() {
+    // Set up the component's initial state
+  },
+  componentWillMount: function() {
+    // Component is about to be rendered
+  },
+  componentWillUnmount: function() {
+    // Component is about to be removed from the DOM
+  },
+  render: function() {
+    // Returns a single child element
+    // Pure:
+    //   - Does not modify state
+    //   - Does not interact with the DOM directly
+    //   - Returns same result each time it is invoked
+  }
+});

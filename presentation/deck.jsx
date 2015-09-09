@@ -14,14 +14,18 @@ const images = {
   dashboardComponents: require("./images/poop_monitor_dashboard_components.png"),
   diaper: require("./images/poop_monitor_diaper.png"),
   diaperComponents: require("./images/poop_monitor_diaper_components.png"),
-  lego: require("./images/lego.png")
+  lego: require("./images/lego.png"),
+  poop_monitor_inspiration: require("./images/poop_monitor_inspiration.png"),
+  happy_baby: require("./images/happy_baby.png")
 };
 
 preloader([
             images.dashboard, 
             images.dashboardComponents, 
             images.diaper, 
-            images.diaperComponents
+            images.diaperComponents,
+            images.poop_monitor_inspiration,
+            images.happy_baby
           ]);
 
 const justifyCenter = {
@@ -63,13 +67,13 @@ export default class extends React.Component {
             <Heading size={2} caps textColor="black">
               React: 
             </Heading>
-            <Heading size={4} caps fit textColor="black">
+            <Heading size={4} caps fit textColor="black" style={{"margin-top": "-1.8em"}}>
               <Appear>a JavaScript library for creating user interfaces</Appear>
             </Heading>
         </Slide>
 
 
-        <Slide transition={["slide"]}  bgColor="secondary" textColor="primary">
+        <Slide transition={["slide"]}  bgColor="secondary" textColor="primary" notes="encourages creation of modular, composable UIs">
           <Heading size={2} textColor="primary">
             Why React?
           </Heading>
@@ -97,6 +101,7 @@ export default class extends React.Component {
           <Heading size={2} textColor="tertiary">
             Demo!
           </Heading>
+          <Image src={images.poop_monitor_inspiration.replace('/','')} />
         </Slide>
 
 
@@ -183,7 +188,7 @@ export default class extends React.Component {
 
         <Slide transition={["slide"]} bgColor="black">
           <BlockQuote>
-            <Quote>...with React the only thing you do is build components.</Quote>
+            <Quote>...with React, the only thing you do is build components.</Quote>
             <Cite><a href="https://facebook.github.io/react/docs/why-react.html">Why React?</a></Cite>
           </BlockQuote>
         </Slide>
@@ -214,12 +219,18 @@ export default class extends React.Component {
           </Heading>
           <CodePane
             lang="javascript"
-            source={require("raw!./componentUse.example")}
-            margin="20px auto"/>
+            source={require("raw!./componentUse1.example")}
+            margin="0px auto"/>
+          <Appear>
+            <CodePane
+              lang="javascript"
+              source={require("raw!./componentUse2.example")}
+              margin="0px auto"/>
+          </Appear>
         </Slide>
 
 
-        <Slide transition={["slide"]}>
+        <Slide transition={["slide"]} notes="vs. imperative: focused on describing _how_ a program operates">
           <Heading size={3} textColor="tertiary">
             Component Basics
           </Heading>
@@ -230,99 +241,108 @@ export default class extends React.Component {
             <Fill style={{flex: 2}}>
               <List>
                 <ListItem>Component output is simply a function of `state` and `props`</ListItem>
-
-                <ListItem><Appear>Lower-case tag name renders HTML</Appear></ListItem>
-                <ListItem><Appear>Upper-case renders React component</Appear></ListItem>
+                <ListItem><Appear>Data flows from "Owner to Owned"</Appear>
+                  <List>
+                    <ListItem style={subListItem}><Appear>&lt;Parent&gt;&lt;Child /&gt;&lt;/Parent&gt;</Appear></ListItem>
+                  </List>
+                </ListItem>
+                <ListItem><Appear>Declarative</Appear>
+                  <List>
+                    <ListItem style={subListItem}><Appear>Focus is on _what_ the program should accomplish without prescribing how to do it</Appear></ListItem>
+                  </List>
+                </ListItem>
               </List>
             </Fill>
           </Layout>
         </Slide>
 
 
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={2} textColor="tertiary">
-            Speed: at a price
-          </Heading>
-          {/* code sample of handleSubmit */}
+        <Slide transition={['slide']} bgColor="primary" notes="Stateful component">
+          <Heading size={6} style={{"margin-top": "-1.2em"}}>A Stateful Component</Heading>
+          <CodePane
+            lang="javascript"
+            source={require("raw!./advancedComponent.example")}
+            margin="20px auto"/>
         </Slide>
 
 
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={2} textColor="tertiary">
-            Gotchas
-          </Heading>
-          {/*  */}
+        <Slide transition={['slide']} bgColor="primary" notes="lets break it down">
+          <Heading size={6} style={{"margin-top": "-1.2em"}}>Let's Break it Down</Heading>
+          <CodePane
+            lang="javascript"
+            source={require("raw!./compBreakdown.example")}
+            margin="20px auto"/>
+            <Appear><Text>More on component lifecycle methods can be <a href="https://facebook.github.io/react/docs/component-specs.html">found here</a></Text></Appear>
         </Slide>
-        {/*
-        <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-          <Appear fid="1">
-            <Heading size={1} caps fit textColor="primary">
-              Full Width
-            </Heading>
-          </Appear>
-          <Appear fid="2">
-            <Heading size={1} caps fit textColor="tertiary">
-              Adjustable Darkness
-            </Heading>
-          </Appear>
-          <Appear fid="3">
-            <Heading size={1} caps fit textColor="primary">
-              Background Imagery
-            </Heading>
-          </Appear>
-        </Slide>
-        <Slide transition={["zoom", "fade"]} bgColor="primary">
-          <Heading caps fit>Flexible Layouts</Heading>
-          <Layout>
-            <Fill>
-              <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                Left
-              </Heading>
-            </Fill>
-            <Fill>
-              <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                Right
-              </Heading>
-            </Fill>
-          </Layout>
-        </Slide>
+
+
         <Slide transition={["slide"]} bgColor="black">
           <BlockQuote>
-            <Quote>Wonderfully formatted quotes</Quote>
-            <Cite>Ken Wheeler</Cite>
+            <Quote>...code is read far more than it's written, and it's extremely easy to read this modular, explicit code.</Quote>
+            <Cite>Pete Hunt, <a href="https://facebook.github.io/react/docs/thinking-in-react.html">Thinking in React</a></Cite>
           </BlockQuote>
         </Slide>
-        <Slide transition={["slide", "spin"]} bgColor="primary">
-          <Heading caps fit size={1} textColor="tertiary">
-            Smooth
+
+
+        <Slide transition={["slide"]} bgColor="">
+          <Heading size={6} style={{"margin-top": "-1.2em"}}>
+            Speed: at a price
           </Heading>
-          <Heading caps fit size={1} textColor="secondary">
-            Combinable Transitions
-          </Heading>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <List>
-            <ListItem><Appear fid="1">Inline style based theme system</Appear></ListItem>
-            <ListItem><Appear fid="2">Autofit text</Appear></ListItem>
-            <ListItem><Appear fid="3">Flexbox layout system</Appear></ListItem>
-            <ListItem><Appear fid="4">React-Router navigation</Appear></ListItem>
-            <ListItem><Appear fid="5">PDF export</Appear></ListItem>
-            <ListItem><Appear fid="6">And...</Appear></ListItem>
+            <ListItem>No two-way data binding; `props` flow from parent to child </ListItem>
+            <ListItem><Appear>Form element data often needs to propogate up</Appear></ListItem>
+            <Appear>
+              <CodePane
+              lang="javascript"
+              source={require("raw!./propogateForm1.example")}
+              margin="20px auto"/>
+            </Appear>
+            <Appear>
+              <CodePane style={{"margin-top": "-1em"}}
+              lang="javascript"
+              source={require("raw!./propogateForm2.example")}
+              margin="20px auto"/>
+            </Appear>
           </List>
         </Slide>
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={1} caps fit textColor="tertiary">
-            Your presentations are interactive
+
+
+        <Slide transition={["slide"]} bgColor="black" textColor="primary">
+          <Heading size={3} textColor="primary">
+            Gotchas
           </Heading>
-          <Interactive/>
+          <List>
+            <ListItem>Use an NPM/Gulp/Browserify workflow from the start
+              <List>
+                <ListItem style={subListItem}><Appear>Like this <Link href="https://github.com/christianalfoni/react-app-boilerplate">react-app-boilerplate</Link></Appear></ListItem>
+              </List>
+            </ListItem>
+            <ListItem><Appear>Beware copying source from non-React samples</Appear>
+              <List>
+                <ListItem style={subListItem}><Appear>`class` becomes `className`</Appear></ListItem>
+                <ListItem style={subListItem}><Appear>`for` becomes `htmlFor`</Appear></ListItem>
+              </List>
+            </ListItem>
+            <ListItem><Appear>React is not a monolithic framework like Angular</Appear>
+              <List>
+                <ListItem style={subListItem}><Appear>It will not make XHRs for you</Appear></ListItem>
+                <ListItem style={subListItem}><Appear>It does not handle routing between views</Appear></ListItem>
+                <ListItem style={subListItem}><Appear>You will have to code your own page transitions</Appear></ListItem>
+              </List>
+            </ListItem>
+          </List>
         </Slide>
-        <Slide transition={["spin", "slide"]} bgColor="tertiary">
-          <Heading size={1} caps fit textColor="primary">
-            Made with love in Seattle by
+
+
+        <Slide transition={["slide"]} bgColor="primary" notes="thanks for your attention!">
+          <Heading size={3} textColor="tertiary"  style={{"margin-top": "-.5em"}}>
+            Thanks!
           </Heading>
-          <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
+          <Image src={images.happy_baby.replace('/','')} />
+          <Text>Project source on Github: <Link href="http://bit.ly/ott-react">bit.ly/ott-react</Link></Text>
         </Slide>
-      */}
+        
+
       </Deck>
     );
   }
